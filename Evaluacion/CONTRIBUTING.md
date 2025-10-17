@@ -1,8 +1,6 @@
+===========================================
+PASOS Y CONFIGURACIÓN DEL ENTORNO
 ==============================================
-PRIMEROS PASOS Y CONFIGURACIÓN DEL ENTORNO
-==============================================
-
-A continuación se detalla el procedimiento para la configuración inicial del entorno de desarrollo.
 
 1.1. Instalación del Proyecto
 
@@ -16,12 +14,11 @@ npm install
 3. Iniciar el servidor de desarrollo: npm start
 La aplicación se ejecutará en la dirección http://localhost:3000.
 
-FLUJO DE TRABAJO CON GIT (GITFLOW) =====================================
+## FLUJO DE TRABAJO CON GIT (GITFLOW) =====================================
 
 El proyecto adopta el modelo de ramas GitFlow para la gestión del código fuente. Las ramas principales son:
 
 main: Contiene el código en producción estable.
-
 develop: Es la rama principal de integración donde convergen las nuevas funcionalidades y correcciones.
 
 2.1 Creación de Ramas de Trabajo
@@ -38,7 +35,7 @@ git checkout develop
 git pull
 git checkout -b bugfix/descripcion-del-error
 
-ESTÁNDARES Y CALIDAD DEL CÓDIGO ===================================
+## ESTÁNDARES Y CALIDAD DEL CÓDIGO ===================================
 
 3.1 Guía de Estilo con ESLint
 
@@ -59,12 +56,10 @@ npm run lint
 
 El proyecto está integrado con SonarCloud para el análisis estático de código. Los Pull Requests son analizados automáticamente para detectar vulnerabilidades, bugs y "Code Smells". Las contribuciones no deben introducir nuevos problemas de calidad.
 
-PRUEBAS UNITARIAS ====================
+## PRUEBAS UNITARIAS ====================
 
 Las pruebas son una parte fundamental del ciclo de desarrollo. Se utiliza el framework Jasmine con el ejecutor de pruebas Karma.
-
 Ubicación de Archivos: Las pruebas deben ubicarse en el directorio 'src/' y seguir la nomenclatura '.test.js' o '.test.jsx'.
-
 Ejecución de Pruebas: Para correr la suite de pruebas completa, se utiliza el comando:
 npm test
 
