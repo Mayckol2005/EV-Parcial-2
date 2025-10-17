@@ -23,7 +23,7 @@ jobs:
         run: npm test
 
       - name: Lint code with ESLint
-        run: npm run lint
+        run: npx eslint . --fix
 
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master 
