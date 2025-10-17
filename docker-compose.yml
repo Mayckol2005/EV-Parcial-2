@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     
-    image: colmay2005/EV-parcial2:latest
+    image: colmay2005/ev-parcial2:latest
     ports:
       - "3000:3000"
 
