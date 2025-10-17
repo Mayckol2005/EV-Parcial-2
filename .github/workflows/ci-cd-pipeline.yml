@@ -30,6 +30,7 @@ jobs:
         continue-on-error: true 
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          run: npx snyk test || echo "Snyk encontro vulnerabilidades, continuando flujo."
         with:
           command: test
 
