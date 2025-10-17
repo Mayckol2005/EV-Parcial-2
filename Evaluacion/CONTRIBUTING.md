@@ -1,8 +1,6 @@
 ==============================================
-PRIMEROS PASOS Y CONFIGURACIÓN DEL ENTORNO
+PASOS Y CONFIGURACIÓN DEL ENTORNO
 ==============================================
-
-A continuación se detalla el procedimiento para la configuración inicial del entorno de desarrollo.
 
 1.1. Instalación del Proyecto
 
