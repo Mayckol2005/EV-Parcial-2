@@ -2,34 +2,25 @@ name: Node.js CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      security-events: write
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: '18'
 
-      - name: Install dependencies (locked)
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      - name: Run tests
+      - name: Run tests with Jasmine/Karma
         run: npm test
-
-      - name: Ejecutar Tests con Karma
-        run: npx karma start karma.conf.js --single-run
 
       - name: Lint code with ESLint
         run: npx eslint . --fix
