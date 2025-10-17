@@ -27,11 +27,11 @@ jobs:
 
       - name: Snyk Security Scan
         uses: snyk/actions/node@master
-        continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           command: test
+        continue-on-error: true
 
       - name: Set up Java for SonarCloud
         uses: actions/setup-java@v4
@@ -46,13 +46,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run:
-          npx sonar-scanner \
-            -Dsonar.projectKey=Mayckol2005_EV-Parcial-2 \
-            -Dsonar.organization=Mayckol2005 \
-            -Dsonar.sources=./src \
-            -Dsonar.host.url=https://sonarcloud.io/ \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        run: >
+          npx sonar-scanner
+          -Dsonar.projectKey=Mayckol2005_EV-Parcial-2
+          -Dsonar.organization=Mayckol2005
+          -Dsonar.sources=./src
+          -Dsonar.host.url=https://sonarcloud.io/
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -65,4 +65,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/EV-parcial2:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ev-parcial2:latest
