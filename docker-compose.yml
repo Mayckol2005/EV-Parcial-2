@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    
+    image: colmay2005/EV-parcial2:latest
+    ports:
+      - "3000:3000"
+
+    environment:
+      - DB_HOST=db
+      - DB_USER=colmay
+      - DB_PASSWORD=12345
+      - DB_DATABASE=mydatabase
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword 
+      MYSQL_DATABASE: mydatabase       
+      MYSQL_USER: colmay                
+      MYSQL_PASSWORD: 12345         
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_HOST=db 
+      - PMA_PORT=3306
+    depends_on:
+      - db
