@@ -42,9 +42,13 @@ git checkout -b bugfix/descripcion-del-error
 Se utiliza ESLint para mantener un código limpio y consistente. Es mandatorio que todo el código cumpla con las reglas definidas en el archivo .eslintrc.json.
 
 Indentación: Usar tabs (\t).
+
 Comillas: Usar comillas dobles (").
+
 Punto y coma: Siempre al final de cada sentencia.
+
 Nomenclatura: Usar camelCase para variables y funciones.
+
 Para verificar el código, se puede ejecutar el siguiente comando:
 npm run lint
 
